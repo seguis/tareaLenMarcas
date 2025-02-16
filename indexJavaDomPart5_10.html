@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validacion de formularios</title>
+    <script>
+        function validaFormulario() {
+            var nombre = document.getElementById("nombre");
+            if (nombre.value.length == 0) {
+                alert("El nombre no puede quedar en blanco");
+                return false;
+            }
+
+            var edad = document.getElementById("edad");
+            if (parseInt(edad.value) < 18) {
+                alert("Debe tener mas de 18");
+                return false;
+            }
+
+            alert("Datos correcto. Se envia correctamente");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Formulario de envio</h1>
+    <form action="procesa.php" onsubmit="return validaFormulario()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre">
+
+        <label for="edad">Edad:</label>
+        <input type="text" name="edad" id="edad">
+
+        <input type="submit" value="Enviar Datos">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provincia</title>
+
+    <script>
+        function actualizarEstado() {
+            let pais = document.getElementById("pais");
+            let ciudad = document.getElementById("ciudad");
+
+            if (pais.value == "elija" || pais.value == "ext") {
+                ciudad.style.display = "none";
+            } else {
+                ciudad.style.display = "";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Provincia de Envio</h1>
+
+    <p>
+        <label for="pais">Pais: </label>
+        <select name="pais" id="pais" onchange="actualizarEstado()">
+            <option value="elija">Elija destino</option>
+            <option value="esp">España</option>
+            <option value="ext">Fuera de España</option>
+        </select>
+        <select name="ciudad" id="ciudad" style="display: none;">
+            <option value="cr">Ciudad Real</option>
+            <option value="to">Toledo</option>
+            <option value="gu">Guadalajara</option>
+            <option value="ma">Madrid</option>
+        </select>
+    </p>
+</body>
+
+</html>

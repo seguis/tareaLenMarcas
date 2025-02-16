@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primer ejercicio</title>
+
+</head>
+
+<body>
+    <h1>Pagina con javascript</h1>
+    <script>
+        /*Pide un nombre por pantalla */
+        var nombre = prompt("Dime tu nombre");
+        alert("Bienvenido a mi pagina " + nombre);
+        let x = 5;
+        let y = 6;
+        let z = x + y;
+        alert("z: " + z);
+        // operador + sirve para sumar y tambien para concatenar strings
+        let edad = prompt("Dime tu edad");
+        let mensaje = "";
+        if (edad<18){
+            mensaje= "No puedes acceder a esta pagina";
+        }else{
+            mensaje = "Bienvenido a esta pagina";
+        }
+        alert(mensaje);
+    </script>
+</body>
+
+</html>
