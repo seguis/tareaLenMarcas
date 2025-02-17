@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios JavaScript
+    </title>
+    <style>
+        #titulo2{
+            color: green;
+            background-color: yellow;
+            border: 2px solid green;
+            font-size: 5em;
+        }
+    </style>
+    <script>
+        function notamedia() {
+            let suma = 0;
+            let nota;
+
+            for (let i = 0; i <= 3; i++) {
+                nota = parseInt(prompt("Dime una nota"));
+                suma = suma + nota;
+            }
+            let media = suma / 4;
+            alert("La media es " + media);
+        }
+
+        function multiplo7() {
+            let numero = prompt("Dime un numero");
+            if (numero % 7 == 0) {
+                alert("Es multiplo de 7");
+            } else {
+                alert("No es multiplo de 7");
+            }
+        }
+
+        function hacerMagia(){
+            document.getElementById("titulo2").innerHTML = "La pagina de: " + prompt("Por favor ingrese su nombre");
+            document.getElementById("btnMagia").style.display = "";
+        }
+        function pocoDeColor(){
+            document.getElementById("titulo2").style.color= "red";
+        }
+
+        function modificaBtn(){
+            document.getElementById("titulo").style.fontSize = "50px";
+            document.getElementById("titulo").style.backgroundColor = "yellow";
+            document.getElementById("titulo").innerHTML = "Boton pulsado!!!";
+        }
+
+        function validarForm(){
+            if(document.getElementById("usuario").value.length < 5){
+                alert("El usuario no debe ser menor a 5")
+                return false;
+            }
+            if (document.getElementById("chequeo").checked == false){
+                alert("Debes aceptar las condiciones");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Ejercicios Javascript</h1>
+    <p>
+        <b>1. Haz un programa que te pida cuatro números y te devuelva la media de los cuatro. Para ello deberás
+        convertirlos previamente a enteros con la función entero=Number(numero); ( el programa se ejecuta desde un botón
+        )</b>
+        <br>
+        <button onclick="notamedia()">Nota media con 4 notas</button>
+    </p>
+
+    <p>
+        <b>
+        2. Haz un programa que pida un número y me diga si es múltiplo de 7 ( El resto de la división entre 7 es cero )</b>
+        <br>
+        <button onclick="multiplo7()">Verificar si es multiplo de 7</button>
+    </p>
+
+    <p>
+        5. Haz una página  con un H1 con el id “titulo” con color de letra verde y color de fondo yellow,borde 2px solid Green, y tamaño de la letra 5em, y centrado..............
+        <br>
+        <h1 id="titulo2"></h1>
+        <button onclick="hacerMagia()">Hacer magia</button>
+        <button onclick="pocoDeColor()" id="btnMagia" style="display: none;">Añade un poco de color</button>
+    </p>
+
+    <p>
+        <b>
+        6. Hacer un H1 con el texto “Título Original” y un botón. Al pulsar el botón, el tamaño del h1 pasa a ser “50px” y el color de fondo “yellow” y el texto del botón a “Botón pulsado”
+    </b><br>
+        <h1 id="titulo">Titulo original</h1>
+        <button onclick="modificaBtn()">Hacer magia</button>
+    </p>
+
+    <p><b>
+        10. Haz un formulario con un campo “Usuario” de tipo texto y un campo de tipo checkbox que diga “He leído y acepto las condiciones................
+    </b><br>
+        <form action="xxx.php" onsubmit="return validarForm()">
+            <label for="usuario">Usuario</label>
+            <input type="text" name="usuario" id="usuario">
+
+            <label for="chequeo">He leido las condiciones</label>
+            <input type="checkbox" name="chequeo" id="chequeo">
+
+            <button type="submit">Enviar</button>
+        </form>
+    </p>
+</body>
+
+</html>
