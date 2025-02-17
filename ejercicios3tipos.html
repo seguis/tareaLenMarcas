@@ -52,13 +52,16 @@
 
         function validarForm(){
             if(document.getElementById("usuario").value.length < 5){
-                alert("El usuario no debe ser menor a 5")
+                document.getElementById("error").style.display = "";
+                document.getElementById("error").innerHTML = "El usuario debe contener 5 o mas caracteres";
                 return false;
             }
             if (document.getElementById("chequeo").checked == false){
-                alert("Debes aceptar las condiciones");
+                document.getElementById("error").style.display = "";
+                document.getElementById("error").innerHTML = "Debes aceptar las condiciones";
                 return false;
             }
+            document.getElementById("error").style.display = "none";
             return true;
         }
     </script>
@@ -109,6 +112,7 @@
 
             <button type="submit">Enviar</button>
         </form>
+        <h3 id="error" style="color: red; display: none;"></h3>
     </p>
 </body>
 
